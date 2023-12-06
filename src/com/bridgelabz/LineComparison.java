@@ -38,14 +38,16 @@ public class LineComparison {
         double secondLineDeltaX = secondLine_x2 - secondLine_x1;
         double secondLineDeltaY = secondLine_y2 - secondLine_y1;
         double secondLineLength = Math.sqrt(secondLineDeltaX * secondLineDeltaX + secondLineDeltaY * secondLineDeltaY);
-        // Display the result
-        System.out.println("The length of the line is: " + secondLineLength);
-        if(firstLineLength == secondLineLength) {
-            System.out.println("Both lines have equal length");
+        String firstLineLengthString = Double.toString(firstLineLength);
+        String secondLineLengthString = Double.toString(secondLineLength);
+        if(firstLineLengthString.compareTo(secondLineLengthString)==0) {
+            System.out.println("Both lines have same length");
         }
-        else
-        {
-            System.out.println("Lines are not equal");
+        else if(firstLineLengthString.compareTo(secondLineLengthString)>0) {
+            System.out.println("First line is greater than second line");
+        }
+        else {
+            System.out.println("First line is smaller than second line");
         }
     }
     
